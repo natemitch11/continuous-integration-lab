@@ -9,13 +9,14 @@ jobs:
       - node/install-packages
       - run:
           command: npm run test
+
   say-hello:
     docker:
-      -image: cimg/base:stable
+      - image: cimg/base:stable
     steps:
       - checkout
       - run:
-          name: "say hello"
+          name: "Say hello"
           command: "echo Hello, World!"
 
 workflows:

@@ -7,7 +7,7 @@ jobs:
   steps:
     - checkout
     - node/install-packages:
-      cache-path: ~/project/node_modules
+      cache-path: 
       override-ci-command: npm install
     - run: npm run test
 workflows:

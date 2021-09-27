@@ -16,8 +16,6 @@ jobs:
       - run:
           name: "Say hello"
           command: "echo Hello, World!"
-      - run: 
-          name: "test.js"
           command: "npm install"
           command: 'npm run test'
   

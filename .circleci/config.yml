@@ -2,9 +2,15 @@ orbs:
   node: circleci/node@2.0.2
 
 version: 2.1
-
+jobs:
+  executor: node/default
+  steps:
+    - checkout
+    - node/install-packages:
+      cache-path: ~/project/node_modules
+      override-ci-command: npm install
+    - run: npm run test
 workflows:
-  unit-tests:
+  test_my_app:
     jobs:
-      -node/test:
-        run: "npm run test"
+      - test
